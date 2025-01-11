@@ -1,0 +1,313 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+
+}
+.bar{
+    padding-top: 10px;
+    width: 180px;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+   
+}
+.bar h2{
+    font-size: 35px;
+    text-align: center;
+    cursor: pointer;
+}
+.bar h2:hover{
+    color: #1e1e1e;
+}
+.bar ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    background-color: #f8f8f8;
+    z-index: 1;
+ 
+}
+.bar ul li{
+    width: 100%;
+    padding: 10px 10px;
+    background-color: #000;
+}
+.bar ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.bar ul .before{
+    border-radius: 0 0 20px 0;
+}
+.bar ul .after{
+    border-radius: 0 20px 0 0;
+}
+.bar ul .now{
+    background-color:  #f8f8f8;
+    padding-left: 40px;
+    border-radius: 20px 0 0 20px;
+    
+    position: relative;
+   
+
+}
+.bar ul .now::after{
+    content: "";
+    width: 30px;
+    height: 100%;
+    background-color: #000;
+    position: absolute;
+    left:0;
+    top: 0;
+    z-index: -1;
+   
+}
+.bar ul .now a{
+    color: #000;
+}
+.page{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    
+}
+.partie1{
+    padding: 10px;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    z-index: 100;
+}
+.partie1 >div{
+    align-items: center;
+
+    display: flex;
+}
+.partie1 >div:first-child i{
+    cursor: pointer;
+}
+
+.partie1 >div:first-child h3{
+  font-size: 25px;
+  margin-left: 10px;
+}
+.partie1 >div:last-child i{
+    background-color: #eee;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    padding: 2px 7px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.partie1 >div:last-child{
+    cursor: pointer;
+}
+
+.partie1 >div:last-child:hover h3,
+.partie1 >div:last-child:hover p,
+.partie1 >div:last-child:hover i
+{
+    color: #6b6b6b;
+
+}
+.partie1 >div:last-child p{
+    color: #6e6e6e;
+    font-size: 14px;
+}
+.partie2{
+    padding:20px 80px 10px 80px ;
+    flex: 1;
+    background-color: #f8f8f8;
+}
+.partie2 >div:first-child {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.partie2 >div:first-child div h2{
+    font-size: 30px;
+    margin-bottom: 5px;
+
+}
+.partie2 >div:first-child div p{
+    font-size: 14px;
+    color: #6e6e6e;
+}
+.partie2 >div:first-child div{
+    position: relative;
+}
+.partie2 >div:first-child div i{
+    position: absolute;
+    top: 9px;
+    left: 7px;
+    color: rgb(59, 95, 194);
+}
+
+.partie2 >div:first-child div input{
+    border-radius: 5px;
+    padding: 10px 10px 10px 30px;
+    margin-right: 10px;
+    border: .5px solid #f0f0f0;
+    width: 250px;
+}
+
+.partie2 .table{
+    width: 100%;
+    min-height: 80%;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.05);
+    background-color: white;
+}
+.partie2 table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th ,td{
+    border-bottom: #c6c5c5 1px solid;
+    padding: 10px ;
+    text-align: left;
+    max-width:150px;
+}
+
+td img{
+    width: 39px;
+    height: 39px;
+}
+.edit_choix{
+    
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: -5px;
+    background-color: white;
+    border: #000 1px solid;
+   
+}
+.status{
+    position: relative;
+     cursor: pointer;
+}
+.edit_choix input{
+    padding:5px 10px;
+    width: 100%;
+    cursor: pointer;
+    text-transform: capitalize;
+    background-color: white;
+    border: transparent;
+
+}
+.edit_choix input:hover{
+background-color: #e5e5e5;
+}
+.edit ,
+ .delete{
+    cursor: pointer;
+    margin-right:2px ;
+}
+.edit:hover{
+    color: rgb(0, 179, 0);
+}
+.delete:hover{
+    color: red;
+}
+
+
+.partie2 >div:last-child{
+    margin-top: 10px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+
+.partie2 >div:last-child p{
+    color: #6e6e6e;
+}
+
+.partie2 >div:last-child button{
+    padding: 2px;
+}
+
+
+.add_mody{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.add_mody >div{
+    background-color: white;
+    width: 300px;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    border-radius:20px ;
+    padding: 20px 40px;
+    gap: 10px;
+
+}
+.add_mody >div h2{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    font-size: 30px;
+    
+}
+.add_mody >div p{
+    color: #6e6e6e;
+
+}
+.add_mody >div >form{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+}
+.add_mody >div> form >input{
+    padding: 10px 10px;
+    background-color: rgb(212, 0, 0);
+    color: white;
+    font-size: 15px;
+    border: #e8e8e8 1px solid;
+    cursor: pointer;
+
+
+}
+.add_mody >div> form >input:hover{
+    background-color:rgba(212, 0, 0, 0.519);
+}
+.add_mody >div> form >input:first-child{
+    background-color: #6e6e6e;
+
+}
+.add_mody >div> form> input:nth-of-type(1):hover{
+    background-color: #6e6e6e9c;
+
+}
